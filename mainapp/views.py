@@ -13,7 +13,8 @@ def index(request):
 def home(request):
 
     restaurants = Restaurant.objects.all()
-    return render(request, "index.html", {'eateries': restaurants})
+    print(restaurants)
+    return render(request, "index.html", {'items': restaurants})
 
 
 # def about(request):
