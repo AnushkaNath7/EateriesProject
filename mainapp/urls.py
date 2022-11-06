@@ -4,13 +4,8 @@ from django.urls import path
 from . import views
 urlpatterns = [
     path('', views.home),
-    path('about', views.about),
-    path('work', views.work),
-    path('stories', views.story),
-    path('adopt', views.adopt),
+    # path('about', views.about),
+
     path('contact', views.contact),
-    path('donate', views.donate),
-    path('terms', views.term),
-    path('privacy', views.privacy),
-    path('refund', views.refund),
+
 ]
