@@ -17,6 +17,21 @@ def home(request):
     return render(request, "index.html", {'items': restaurants})
 
 
+def pfc(request):
+
+    restaurants = Restaurant.objects.all()
+    print(restaurants)
+    return render(request, "pfc.html", {'items': restaurants})
+
+
+def restaurant(request, resto):
+    print(resto)
+    fooditems = Food.objects.filter(restaurant__contains=resto)
+    restaurant = Restaurant.objects.get(tag=resto)
+    print(fooditems, restaurant)
+    return render(request, "resto.html", {'menu': fooditems, 'restaurant': restaurant})
+
+
 # def about(request):
 
 #     backimg = BackgroundNav.objects.all()

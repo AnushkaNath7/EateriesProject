@@ -45,35 +45,35 @@
         </div>
       </nav>
     </div>
-    {% comment %} <div class="flex justify-center"> {% endcomment %}
+
     <div class="justify-center">
-      {% comment %} <div class="flex flex-col max-w-7xl justify-center items-center"> {% endcomment %}
-      <div class=" max-w-7xl justify-center items-center" style="margin-left:auto;margin-right:auto">
-        {% for item in items %} {% comment %}
+      <div
+        class="max-w-7xl justify-center items-center"
+        style="margin-left: auto; margin-right: auto"
+      >
+        {% for restaurant in items %}
         <div
-          class="flex md:flex-row flex-col max-w-7xl justify-center items-center"
+          class="overflow-hidden bg-white m-2 shadow-lg flex flex-col md:flex-row justify-center w-3/4 md:w-1/2 hover:scale-105 hover:brightness-90"
+          style="width: 45%; display: inline-block"
         >
-          {% endcomment %}
-
-          <div
-            class="overflow-hidden bg-white m-2 shadow-lg flex flex-col md:flex-row justify-center w-3/4 md:w-1/2 hover:scale-105 hover:brightness-90"
-            style="width:45%;display:inline-block"
-          >
-            <a href="{{item.tag}}.html">
-              <div class="h-26 w-full overflow-hidden">
-                <img src="{{item.image.url}}" alt="" class="" />
+          <a href="restaurants/{{restaurant.tag}}">
+            <div class="h-26 w-full overflow-hidden" style="height: 300px">
+              <img
+                src="{{restaurant.image.url}}"
+                alt=""
+                class=""
+                style="max-height: 100%; max-height: 100%; margin: auto"
+              />
+            </div>
+            <div class="grid p-2">
+              <div class="font-bold text-lg text-black m-2">
+                {{restaurant.name}}
               </div>
-              <div class="grid p-2">
-                <div class="font-bold text-lg text-black m-2">
-                  {{item.name}}
-                </div>
-              </div>
-            </a>
-          </div>
-
-          {% endfor %} {% comment %}
+            </div>
+          </a>
         </div>
-        {% endcomment %}
+
+        {% endfor %}
       </div>
     </div>
     <script src="https://cdn.tailwindcss.com"></script>
